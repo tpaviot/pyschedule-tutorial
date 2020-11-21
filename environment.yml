@@ -1,0 +1,9 @@
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.7
+  - coincbc=2.10.5
+  - glpk=4.65
+  - pip:
+    - pyschedule==0.2.33
