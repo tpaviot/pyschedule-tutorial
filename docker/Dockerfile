@@ -2,15 +2,15 @@ FROM continuumio/miniconda3:4.8.2
 
 COPY environment.yml /tmp/
 
-USER root
-
 RUN conda env create -f /tmp/environment.yml -n pyschedule-tuto
 
-RUN conda activate pyschedule-tuto
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "pyschedule-tuto", "/bin/bash", "-c"]
 
 #
 # Install pyschedule personal fork
 #
+
 WORKDIR /opt/build
 RUN git clone https://github.com/tpaviot/pyschedule forkpyschedule
 WORKDIR /opt/build/forkpyschedule
