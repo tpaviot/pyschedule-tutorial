@@ -15,7 +15,7 @@ WORKDIR /opt/build
 RUN git clone https://github.com/tpaviot/pyschedule forkpyschedule
 WORKDIR /opt/build/forkpyschedule
 RUN git checkout tut-pyschedule
-WORKDIR /opt/jovyan/build/forkpyschedule/src
+WORKDIR /opt/build/forkpyschedule/src
 RUN python setup.py build
 RUN python setup.py install
 
